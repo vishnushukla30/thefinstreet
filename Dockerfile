@@ -7,7 +7,7 @@ FROM node:lts as builder
 WORKDIR /my-project
 COPY . .
 COPY --from=dependencies /my-project/node_modules ./node_modules
-RUN yarn build  --ignore-engines
+# RUN yarn build  --ignore-engines
 FROM node:lts as runner
 WORKDIR /my-project
 ENV NODE_ENV production
